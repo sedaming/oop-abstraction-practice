@@ -1,0 +1,17 @@
+# We intend to join two tables. They are already insert into the database
+# we intedn to show age based on three different groups, including joniors, seniors, and fresh. 
+SELECT 
+    emdem.EmployeeID,
+
+    CASE
+        WHEN emdem.Age > 35 THEN 'Senior'
+        WHEN emdem.Age BETWEEN 30 AND 35 THEN 'Junior'
+        ELSE 'Fresh'
+    END AS Level
+
+FROM PRO2026.dbo.EmployeeDemographics AS emdem
+# pro1016 is the name of database. EmployeeDemographics is one of its table.
+
+JOIN PRO2026.dbo.EmployeeSalary AS empsal
+    ON emdem.EmployeeID = empsal.EmployeeID;
+# the key to join is EmployeeID
