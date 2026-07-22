@@ -1,8 +1,0 @@
-select emdem.EmployeeID, case
-	when emdem.age >35 then 'Senior'
-	when emdem.age between 30 and 35 then 'junior'
-	else 'fresh'
-end as level
-from PRO2026.dbo.EmployeeDemographics as emdem
-join PRO2026.dbo.EmployeeSalary as empsal on
-emdem.EmployeeID = empsal.EmployeeID
